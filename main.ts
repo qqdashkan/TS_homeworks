@@ -123,16 +123,17 @@ class Group {
     return [...this.students];
   }
 
-  getStudentById(
-    studentsID: Student['id'] | Array<Student['id']>
-  ): Student | Array<Student> | undefined {
-    // Add the ability to pass a single identifier and an array of identifiers
+  // Add the ability to pass a single identifier and an array of identifiers
 
+  getStudentById(studentsID: Array<Student['id']>): Array<Student>;
+
+  getStudentById(studentsID: Student['id']): Student;
+
+  getStudentById(studentsID: Array<Student['id']> | Student['id']) {
     if (Array.isArray(studentsID)) {
       return this.students.filter((student) => studentsID.includes(student.id));
-    } else {
-      return this.students.find((student) => student.id === studentsID);
     }
+    return this.students.find((student) => student.id === studentsID);
   }
 }
 
