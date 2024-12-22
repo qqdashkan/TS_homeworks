@@ -1,7 +1,5 @@
-import { IBook } from './books';
-import { IAuthor } from './authors';
-import { books } from './books';
-import { authors } from './authors';
+import { IBook, books } from './books';
+import { IAuthor, authors } from './authors';
 
 interface IBookService {
   getBooks(): Array<IBook>;
