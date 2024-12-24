@@ -10,6 +10,7 @@ interface ICalculator {
 
 class Calculator implements ICalculator {
   name: string;
+  method: Method;
   constructor(name: string) {
     this.name = name;
   }
