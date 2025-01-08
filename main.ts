@@ -30,7 +30,7 @@ function handleAction(
 ): void | never {
   if (action.type === Action.createUser) {
     const { name, age } = action.payload;
-    console.log('Name: ' + name, 'Age: ' + age);
+    console.log(`Name: ${name}, age: ${age}`);
   } else if (action.type === Action.deleteUser) {
     const { userId } = action.payload;
     console.log(`User ${userId} has been deleted`);
